@@ -1,0 +1,145 @@
+from PIL import Image
+images = []
+
+currency = input("what currency? usd/inr/gbp/eur: ")
+
+if currency == "usd":
+    money = int(input("how much money?: "))
+
+    while money >= 100:
+        money = money - 100
+        images.append(Image.open("C:/Users/vikra_0cbgm6y/OneDrive/Desktop/notes/USD/oneh.jpg"))
+
+    while money >= 50:
+        money = money - 50
+        images.append(Image.open("C:/Users/vikra_0cbgm6y/OneDrive/Desktop/notes/USD/fifty.jpg"))
+
+    while money >= 20:
+        money = money - 20
+        images.append(Image.open("C:/Users/vikra_0cbgm6y/OneDrive/Desktop/notes/USD/twenty.jpg"))
+
+    while money >= 10:
+        money = money - 10
+        images.append(Image.open("C:/Users/vikra_0cbgm6y/OneDrive/Desktop/notes/USD/ten.jpg"))
+
+    while money >= 5:
+        money = money - 5
+        images.append(Image.open("C:/Users/vikra_0cbgm6y/OneDrive/Desktop/notes/USD/five.jpg"))
+
+    while money >= 2:
+        money = money - 2
+        images.append(Image.open("C:/Users/vikra_0cbgm6y/OneDrive/Desktop/notes/USD/two.jpg"))
+
+    while money >= 1:
+        money = money - 1
+        images.append(Image.open("C:/Users/vikra_0cbgm6y/OneDrive/Desktop/notes/USD/one.jpg"))
+
+elif currency == "inr":
+    money = int(input("how much money?: "))
+
+    while money >= 500:
+        money = money - 500
+        images.append(Image.open("C:/Users/vikra_0cbgm6y/OneDrive/Desktop/notes/INR/fiveh.jpg"))
+
+    while money >= 200:
+        money = money - 200
+        images.append(Image.open("C:/Users/vikra_0cbgm6y/OneDrive/Desktop/notes/INR/twoh.jpg"))
+
+    while money >= 100:
+        money = money - 100
+        images.append(Image.open("C:/Users/vikra_0cbgm6y/OneDrive/Desktop/notes/INR/oneh.jpg"))
+
+    while money >= 50:
+        money = money - 50
+        images.append(Image.open("C:/Users/vikra_0cbgm6y/OneDrive/Desktop/notes/INR/fifty.jpg"))
+
+    while money >= 20:
+        money = money - 20
+        images.append(Image.open("C:/Users/vikra_0cbgm6y/OneDrive/Desktop/notes/INR/twenty.jpg"))
+
+    while money >= 10:
+        money = money - 10
+        images.append(Image.open("C:/Users/vikra_0cbgm6y/OneDrive/Desktop/notes/INR/ten.jpg"))
+
+    while money >= 5:
+        money = money - 5
+        images.append(Image.open("C:/Users/vikra_0cbgm6y/OneDrive/Desktop/notes/INR/five.png"))
+
+    while money >= 2:
+        money = money - 2
+        images.append(Image.open("C:/Users/vikra_0cbgm6y/OneDrive/Desktop/notes/INR/two.jpg"))
+
+    while money >= 1:
+        money = money - 1
+        images.append(Image.open("C:/Users/vikra_0cbgm6y/OneDrive/Desktop/notes/INR/one.png"))
+
+elif currency == "gbp":
+    money = int(input("how much money?: "))
+
+    while money >= 50:
+        money = money - 50
+        images.append(Image.open("C:/Users/vikra_0cbgm6y/OneDrive/Desktop/notes/GBP/fifty.jpg"))
+
+    while money >= 20:
+        money = money - 20
+        images.append(Image.open("C:/Users/vikra_0cbgm6y/OneDrive/Desktop/notes/GBP/twenty.jpg"))
+
+    while money >= 10:
+        money = money - 10
+        images.append(Image.open("C:/Users/vikra_0cbgm6y/OneDrive/Desktop/notes/GBP/ten.jpg"))
+
+    while money >= 5:
+        money = money - 5
+        images.append(Image.open("C:/Users/vikra_0cbgm6y/OneDrive/Desktop/notes/GBP/five.jpg"))
+
+    while money >= 2:
+        money = money - 2
+        images.append(Image.open("C:/Users/vikra_0cbgm6y/OneDrive/Desktop/notes/GBP/two.jpg"))
+
+    while money >= 1:
+        money = money - 1
+        images.append(Image.open("C:/Users/vikra_0cbgm6y/OneDrive/Desktop/notes/GBP/one.jpg"))
+
+if currency == "eur":
+    money = int(input("how much money?: "))
+
+    while money >= 200:
+        money = money - 200
+        images.append(Image.open("C:/Users/vikra_0cbgm6y/OneDrive/Desktop/notes/EUR/oneh.jpg"))
+
+    while money >= 100:
+        money = money - 100
+        images.append(Image.open("C:/Users/vikra_0cbgm6y/OneDrive/Desktop/notes/EUR/oneh.jpg"))
+
+    while money >= 50:
+        money = money - 50
+        images.append(Image.open("C:/Users/vikra_0cbgm6y/OneDrive/Desktop/notes/EUR/fifty.jpg"))
+
+    while money >= 20:
+        money = money - 20
+        images.append(Image.open("C:/Users/vikra_0cbgm6y/OneDrive/Desktop/notes/EUR/twenty.jpg"))
+
+    while money >= 10:
+        money = money - 10
+        images.append(Image.open("C:/Users/vikra_0cbgm6y/OneDrive/Desktop/notes/EUR/ten.jpg"))
+
+    while money >= 5:
+        money = money - 5
+        images.append(Image.open("C:/Users/vikra_0cbgm6y/OneDrive/Desktop/notes/EUR/five.jpg"))
+
+    while money >= 2:
+        money = money - 2
+        images.append(Image.open("C:/Users/vikra_0cbgm6y/OneDrive/Desktop/notes/EUR/two.png"))
+
+    while money >= 1:
+        money = money - 1
+        images.append(Image.open("C:/Users/vikra_0cbgm6y/OneDrive/Desktop/notes/EUR/one.png"))
+
+width, height = images[0].size
+
+output_image = Image.new('RGB', (width, height * len(images)))
+
+for index, image in enumerate(images):
+    output_image.paste(image, (0, index * height))
+
+output_image.show()
