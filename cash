@@ -8,7 +8,7 @@ if currency == "usd":
 
     while money >= 100:
         money = money - 100
-        images.append(Image.open("C:/Users/vikra_0cbgm6y/OneDrive/Desktop/notes/USD/oneh.jpg"))
+        images.append(Image.open("https://github.com/rishi-codes-216/cash/raw/main/images/oneh.jpg"))
 
     while money >= 50:
         money = money - 50
